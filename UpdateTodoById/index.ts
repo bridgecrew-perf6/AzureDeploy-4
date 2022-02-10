@@ -20,10 +20,7 @@ const httpTrigger: AzureFunction = async function (
     );
     return context.res?.status(OK).send(updateNewTodo);
   } catch (error: any) {
-    context.res = {
-      status: 500,
-      body: error,
-    };
+    throw new Error(error);
   }
 };
 export default httpTrigger;

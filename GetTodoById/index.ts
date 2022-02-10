@@ -12,10 +12,7 @@ const httpTrigger: AzureFunction = async function (
     const todo: ITodo = await findTodoById({ _id: todoId });
     return context.res?.status(OK).send(todo);
   } catch (error: any) {
-    context.res = {
-      status: 500,
-      body: error,
-    };
+    throw new Error(error);
   }
 };
 

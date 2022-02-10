@@ -11,10 +11,7 @@ const httpTrigger: AzureFunction = async function (
     const todos: ITodo[] = await findAllTodo();
     return context.res?.status(OK).send(todos);
   } catch (error: any) {
-    context.res = {
-      status: 500,
-      body: error,
-    };
+    throw new Error(error);
   }
 };
 
