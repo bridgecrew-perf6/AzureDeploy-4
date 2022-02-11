@@ -8,7 +8,7 @@
       "methods": [
         "delete"
       ],
-      "route": "todo/{id}"
+      "route": "todos/{id}"
     },
     {
       "type": "http",
